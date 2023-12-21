@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
     {
         $all_users = [
             [
-                'name' => 'Mohammad Forhad',
-                'email' => 'amfarhad33@gmail.com',
+                'name' => 'Buyer',
+                'email' => 'buyer@gmail.com',
                 'email_verified_at' => now(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'avatar' => 'https://picsum.photos/200/300?nocache=' . microtime(),

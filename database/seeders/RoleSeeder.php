@@ -53,24 +53,5 @@ class RoleSeeder extends Seeder
                 $s_admin->givePermissionTo($permission);
             }
         }
-
-        // $web_guard_permissions = [
-        //     [
-        //         'group_name' => 'product',
-        //         'permissions' => product_permissions(),
-        //     ]
-        // ];
-
-        // foreach ($web_guard_permissions as $web_group_permissions) {
-        //     foreach ($web_group_permissions['permissions'] as $web_permission) {
-        //         $w_permission = Permission::create([
-        //             'name' => $web_permission,
-        //             'guard_name' => 'web',
-        //             'group_name' => $web_group_permissions['group_name'],
-        //         ]);
-
-        //         $admin->givePermissionTo($w_permission);
-        //     }
-        // }
     }
 }
