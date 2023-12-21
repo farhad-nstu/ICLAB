@@ -78,6 +78,19 @@ if(! function_exists('product_permissions')){
     }
 }
 
+if(! function_exists('category_permissions')){
+    function category_permissions()
+    {
+        return [
+            'categories.index',
+            'categories.create',
+            'categories.show',
+            'categories.edit',
+            'categories.delete',
+        ];
+    }
+}
+
 if(! function_exists('discountPrice')){
     function discountPrice($price, $discount){
         $discountAmount = ($price * $discount) / 100;

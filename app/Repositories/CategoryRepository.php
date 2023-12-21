@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Enums;
 use App\Interfaces\CategoryRepositoryInterface;
 use App\Models\Category;
 
@@ -19,6 +20,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     }
 
     public function create(){
+        $data['statuses'] = Enums::CATEGORY_STATUS;
         $data['title'] = 'CATEGORY CREATE';
         return $data;
     }
@@ -29,6 +31,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     }
 
     public function edit(int $id){
+        $data['statuses'] = Enums::CATEGORY_STATUS;
         $data['title'] = 'CATEGORY EDIT';
         $data['category'] = Category::find($id);
         return $data;

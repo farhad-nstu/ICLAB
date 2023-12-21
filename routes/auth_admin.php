@@ -42,7 +42,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/show', [UserController::class, 'show'])->name('show');
 });
 
-Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
+Route::group(['prefix' => 'seller/products', 'as' => 'products.'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
     Route::get('/create', [ProductController::class, 'create'])->name('create');
     Route::post('/store', [ProductController::class, 'store'])->name('store');
@@ -50,7 +50,7 @@ Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
     Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
     Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
 });
-Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+Route::group(['prefix' => 'seller/categories', 'as' => 'categories.'], function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');
     Route::get('/create', [CategoryController::class, 'create'])->name('create');
     Route::post('/store', [CategoryController::class, 'store'])->name('store');

@@ -36,6 +36,25 @@
                          </li>
                      <?php endif; ?>
 
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['categories.index', 'categories.create'], 'admin')): ?>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class='fas fa-users'></i>
+                                <span key="t-multi-level">Category</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('categories.index')): ?>
+                                    <li><a href="<?php echo e(route('categories.index')); ?>"><?php echo e(__('Category List')); ?></a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('categories.create')): ?>
+                                    <li><a href="<?php echo e(route('categories.create')); ?>"><?php echo e(__('Create New')); ?></a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+
                      <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['role.show', 'role.create'], 'admin')): ?>
                          <li>
                              <a href="javascript: void(0);" class="has-arrow waves-effect">

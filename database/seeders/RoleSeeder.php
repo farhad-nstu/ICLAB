@@ -33,6 +33,10 @@ class RoleSeeder extends Seeder
                 'permissions' => user_permissions(),
             ],
             [
+                'group_name' => 'category',
+                'permissions' => category_permissions(),
+            ],
+            [
                 'group_name' => 'product',
                 'permissions' => product_permissions(),
             ],

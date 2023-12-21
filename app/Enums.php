@@ -14,4 +14,9 @@ abstract class Enums
         'Stock Out',
         'Sold Out'
     ];
+
+    const CATEGORY_STATUS = [
+        'Active',
+        'Inactive'
+    ];
 }

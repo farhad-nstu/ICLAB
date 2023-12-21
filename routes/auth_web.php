@@ -33,5 +33,5 @@ Route::post('/logout', [AuthSessionController::class, 'destroy'])
 
 
 Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
-
+    Route::get('/search', [ProductController::class, 'filterProducts'])->name('search_products');
 });
