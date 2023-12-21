@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthSessionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\Seller\CategoryController;
 use App\Http\Controllers\Seller\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,14 @@ Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
     Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
     Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
+});
+Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+    Route::get('/', [CategoryController::class, 'index'])->name('index');
+    Route::get('/create', [CategoryController::class, 'create'])->name('create');
+    Route::post('/store', [CategoryController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [CategoryController::class, 'update'])->name('update');
+    Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
 });
 
 

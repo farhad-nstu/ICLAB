@@ -36,6 +36,25 @@
                          </li>
                      @endcanany
 
+                    @canany(['categories.index', 'categories.create'], 'admin')
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class='fas fa-users'></i>
+                                <span key="t-multi-level">Category</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                @can('categories.index')
+                                    <li><a href="{{ route('categories.index') }}">{{ __('Category List') }}</a>
+                                    </li>
+                                @endcan
+                                @can('categories.create')
+                                    <li><a href="{{ route('categories.create') }}">{{ __('Create New') }}</a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endcanany
+
                      @canany(['role.show', 'role.create'], 'admin')
                          <li>
                              <a href="javascript: void(0);" class="has-arrow waves-effect">
